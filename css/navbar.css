@@ -1,0 +1,201 @@
+:root {
+    --airbnb_red:#FF585D;
+    --light_blue: rgb(119, 182, 224);
+    --dark_blue: rgb(45, 107, 148);
+    --highlight:rgb(255, 121, 88);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0px;
+    font-family: 'segoe ui';
+}
+
+#search-bar-container{
+    width: 300px;
+    height: 40px;
+}
+#search-bar{
+    color: var(--airbnb_red);
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 17px;
+    margin-right: 10px;
+}
+#search-bar-container i{
+    height: 40px;
+    width: 40px;
+    color: white;
+}
+.nav {
+    height: 50px;
+    width: 100%;
+    background-color: var(--airbnb_red);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.nav>.nav-header {
+    display: inline;
+}
+
+.nav>.nav-header>.nav-title {
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    padding: 10px 10px 10px 10px;
+}
+
+.nav>.nav-btn {
+    display: none;
+}
+
+.nav>.nav-links {
+    /* display: inline; */
+    float: right;
+    font-size: 18px;
+}
+
+.nav>.nav-links>a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+}
+
+.nav>.nav-links>a:hover {
+    background-color: var(--highlight);
+}
+
+.nav>#nav-check {
+    display: none;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    /* background-color: var(--dark_blue); */
+    color: white;
+    width: 100%;
+    padding: 0 20px;
+    height: 50px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    margin: 0;
+    position: relative;
+    display: inline-block;
+    text-align: right;
+}
+
+.dropdown:hover{
+    background: var(--highlight);
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--airbnb_red);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: var(--highlight);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: var(--highlight);
+}
+
+@media (max-width:800px) {
+    .nav>.nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+
+    .nav>.nav-btn>label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+    }
+
+    .nav>.nav-btn>label:hover,
+    .nav #nav-check:checked~.nav-btn>label {
+        background-color: var(--highlight);
+    }
+
+    .nav>.nav-btn>label>span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 3px solid white;
+    }
+
+    .nav>.nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: var(--airbnb_red);
+        height: 0;
+        transition: all 0.4s ease-in-out;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+
+    .nav>.nav-links>a {
+        display: block;
+        text-align: right;
+        width: 100%;
+    }
+
+    .nav>#nav-check:not(:checked)~.nav-links {
+        height: 0px;
+    }
+
+    .nav>#nav-check:checked~.nav-links {
+        height: calc(100vh - 50px);
+        overflow-y: auto;
+    }
+    .dropdown{
+        width: 100%;
+        height: 50px;
+    }
+    .dropdown:hover{
+        background: var(--highlight);
+    }
+    #search-bar-container{
+        width: 100%;
+    }
+    #search-bar{
+        margin-left: 10%;
+        width: 80%;
+    }
+}
